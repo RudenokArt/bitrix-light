@@ -1,7 +1,15 @@
 <template>
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-lg-2 col-md-4 col-sm-6 text-right">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        {{$store.state.user.EMAIL}}
+      </div>
+    </div>
+  </div>
   <div class="container pt-5">
     <div class="row">
-      <div class="col-2 left-nav-bar">
+      <div class="col-lg-2 col-md-4 col-sm-12 left-nav-bar">
         <ul class="list-group">
           <li class="list-group-item p-0" aria-current="true" to="/">
             <router-link to="/">Задачи</router-link>
@@ -11,17 +19,28 @@
           </li>
         </ul>
       </div>
+      <div class="col-lg-10 col-md-8 col-sm-12">
+        <router-view/>
+      </div>
     </div>
-  </div>
-  <router-view/>
+  </div>  
+  <LoginFrom/>
 </template>
+
+<script>
+  import LoginFrom from './components/LoginForm.vue';
+  export default {
+    components: {
+      LoginFrom,
+    }
+  };
+</script>
 
 <style>
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
   }
   .left-nav-bar a {
