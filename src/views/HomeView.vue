@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <div class="row border-bottom" v-for="(task, index) in taskList">
-      <div class="col-lg-1 col-md-2 col-sm-4">
-        {{task.id}}/{{task.status}}
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        {{task.id}}
+        <TaskStatus v-bind:status="task.status"/>
       </div>
-      <div class="col-lg-2 col-md-4 col-sm-8">
+      <div class="col-lg-2 col-md-4 col-sm-12">
         {{normalTime(task.createdDate)}}
       </div>
-      <div class="col-lg-9 col-md-6 col-sm-12">
+      <div class="col-lg-8 col-md-4 col-sm-12">
         {{task.title}}
       </div>
     </div>
@@ -16,11 +17,15 @@
 </template>
 
 <script>
+  import TaskStatus from '../components/TaskStatus.vue';
   export default {
     data () {
       return {
         taskList: [],
       };
+    },
+    components: {
+      TaskStatus,
     },
     methods: {
       normalTime: function (time) {

@@ -11,10 +11,10 @@
     <div class="row">
       <div class="col-lg-2 col-md-4 col-sm-12 left-nav-bar">
         <ul class="list-group">
-          <li class="list-group-item p-0" aria-current="true" to="/">
+          <li class="list-group-item p-0 bg-secondary" aria-current="true" to="/">
             <router-link to="/">Задачи</router-link>
           </li>
-          <li class="list-group-item p-0">
+          <li class="list-group-item p-0 bg-secondary">
             <router-link to="/crm">CRM</router-link>
           </li>
         </ul>
@@ -44,7 +44,7 @@
     color: #2c3e50;
   }
   .left-nav-bar a {
-    color: grey;
+    color: blue;
     text-decoration: none;
     display: block;
     height: 100%;
@@ -54,7 +54,7 @@
   }
 
   li a.router-link-exact-active {
-    color: red;
+    color: orange;
   }
 
 </style>
